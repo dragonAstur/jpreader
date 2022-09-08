@@ -3,6 +3,7 @@ import useTokenizedText from "../hooks/useTokenizedText";
 import TextBox from "./TextBox";
 import TokenizedBox from "./TokenizedBox";
 import WordDetail from "./WordDetail";
+import "./App.css";
 function App() {
   const [tokenizedText, tokenizeText] =
     useTokenizedText("お前はもう死んでいる");
@@ -23,6 +24,7 @@ function App() {
 
   return (
     <div className="App">
+      <h1 className="app-title">日本読者</h1>
       <TextBox onFormSubmit={tokenizeText}></TextBox>
       <TokenizedBox
         tokenizedText={tokenizedText}
