@@ -1,7 +1,12 @@
 .tokenized-box {
-  font-size: 2em;
+  font-size: 1.75rem;
+  width: 100%;
+  line-height: 3.5rem;
+  padding-top: 2em;
+  color: rgb(221, 138, 221);
 }
 
 .tokenized-box span:hover {
   color: blueviolet;
+  cursor: pointer;
 }

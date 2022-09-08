@@ -1,0 +1,8 @@
+.word-detail {
+  color: aliceblue;
+  text-align: center;
+}
+
+.word-detail .title {
+  color: aquamarine;
+}

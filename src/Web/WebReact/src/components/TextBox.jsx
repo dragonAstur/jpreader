@@ -18,7 +18,9 @@ const TextBox = ({ onFormSubmit }) => {
           }}
           type="text"
         ></textarea>
-        <button>Tokenize</button>
+        <a href="#" onClick={onSubmit} className="neon-button">
+          Tokenize
+        </a>
       </form>
     </div>
   );

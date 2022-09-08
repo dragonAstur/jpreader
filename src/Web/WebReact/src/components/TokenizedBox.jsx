@@ -16,6 +16,13 @@ const TokenizedBox = ({ tokenizedText, onWordSelected }) => {
         </ruby>
       );
     }
+    if (token.lemma === "。")
+      return (
+        <span>
+          {token.orth}
+          <br />
+        </span>
+      );
     return <span>{token.orth}</span>;
   });
   return <div className="tokenized-box">{renderedBox}</div>;
