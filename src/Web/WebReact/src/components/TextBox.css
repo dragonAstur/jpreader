@@ -62,13 +62,14 @@
   z-index: -1;
   transition: opacity 150ms linear;
 }
-.neon-button:hover,
-.neon-button:focus {
-  /* background-color: var(--clr-neon); */
+.neon-button:hover {
   color: var(--clr-bg);
   text-shadow: none;
 }
 
+.neon-button:hover::before {
+  opacity: 1;
+}
 .neon-button:hover::after {
   opacity: 1;
 }
