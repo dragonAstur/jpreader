@@ -1,0 +1,21 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+flask = "*"
+flask-restful = "*"
+jamdict = "*"
+jamdict-data = "*"
+ja-ginza = "*"
+ginza = "*"
+jaconv = "*"
+flask-cors = "*"
+gunicorn = "*"
+
+[dev-packages]
+autopep8 = "*"
+
+[requires]
+python_version = "3.8"

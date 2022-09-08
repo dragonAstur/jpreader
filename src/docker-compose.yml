@@ -1,0 +1,17 @@
+version: '3.10'
+
+services:
+  tokenizer-flask-api:
+    image: tokenizer-flask-api:latest
+    build:
+      context:  Services/Tokenizer/tokenizer-flask-api
+      dockerfile: Dockerfile
+    ports: 
+    - 5000:8080
+  react-web:
+    image: jpreader-react:latest
+    build:
+      context: Web/WebReact
+      dockerfile: Dockerfile
+    ports: 
+    - 8080:80

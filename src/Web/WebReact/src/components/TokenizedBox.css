@@ -1,0 +1,7 @@
+.tokenized-box {
+  font-size: 2em;
+}
+
+.tokenized-box span:hover {
+  color: blueviolet;
+}
