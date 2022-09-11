@@ -1,3 +1,5 @@
+import os
+import redis
 from flask import Flask, request
 from flask_restful import Api, Resource
 from jamdict import Jamdict
@@ -10,6 +12,8 @@ nlp = spacy.load('ja_ginza')
 app = Flask(__name__)
 api = Api(app)
 CORS(app)
+rd = redis.Redis(host=os.environ["REDIS_URL"],
+                 port=6379, decode_responses=True)
 
 
 def find_meaning(jam: Jamdict, token:  ginza.Token):
@@ -19,8 +23,11 @@ def find_meaning(jam: Jamdict, token:  ginza.Token):
     furigana = False
 
     if token.pos_ not in ["ADP", "AUX", "PUNCT"]:
-        meanings = jam.lookup(token.lemma_).entries
-        meaning = meanings[0].text() if 0 < len(meanings) else ""
+        meaning = rd.get(token.lemma_)
+        if meaning is None:
+            meanings = jam.lookup(token.lemma_).entries
+            meaning = meanings[0].text() if 0 < len(meanings) else ""
+            rd.set(token.lemma_, meaning)
         furigana = True
         readings = token.morph.get("Reading")
         reading = readings[0] if 0 < len(readings) else ""

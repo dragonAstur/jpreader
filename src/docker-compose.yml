@@ -3,6 +3,8 @@ version: '3.10'
 services:
   tokenizer-flask-api:
     image: tokenizer-flask-api:latest
+    environment:
+      REDIS_URL: "redis"
     build:
       context:  Services/Tokenizer/tokenizer-flask-api
       dockerfile: Dockerfile
@@ -15,3 +17,7 @@ services:
       dockerfile: Dockerfile
     ports: 
     - 8080:80
+  redis:
+    image: redis:7.0.4
+    ports: 
+      - 6379:6379

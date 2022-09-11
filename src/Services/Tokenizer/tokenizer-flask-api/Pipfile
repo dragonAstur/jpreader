@@ -13,6 +13,8 @@ ginza = "*"
 jaconv = "*"
 flask-cors = "*"
 gunicorn = "*"
+puchikarui = "==0.2a2"
+redis = {extras = ["hiredis"], version = "*"}
 
 [dev-packages]
 autopep8 = "*"
